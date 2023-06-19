@@ -20,7 +20,7 @@ export default factories.createCoreController('api::auth-custom.auth-custom', ({
       const reqData = ctx.request.body;
 
       // Create the corresponding admin user
-      const hashedPassword = bcrypt.hash(reqData.password, 10);
+      const hashedPassword = await bcrypt.hash(reqData.password, 10);
 
       const admin = await strapi.query('admin::user').create({data: {
         username: reqData.username,
