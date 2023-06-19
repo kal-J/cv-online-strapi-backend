@@ -7,8 +7,9 @@
 
 
 import { factories } from '@strapi/strapi'
-import { createHash } from 'node:crypto'
 import { Resend } from "resend";
+const bcrypt = require('bcryptjs');
+
 
 const resend = new Resend("re_UHGpngb8_BgZesJjMmyJJGadi9oES4QWM");
 
@@ -19,7 +20,7 @@ export default factories.createCoreController('api::auth-custom.auth-custom', ({
       const reqData = ctx.request.body;
 
       // Create the corresponding admin user
-      const hashedPassword = createHash('md5').update(reqData.password).digest('hex')
+      const hashedPassword = bcrypt.hash(reqData.password, 10);
 
       const admin = await strapi.query('admin::user').create({data: {
         username: reqData.username,
