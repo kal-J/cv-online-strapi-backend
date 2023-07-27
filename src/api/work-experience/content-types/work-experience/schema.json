@@ -12,17 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
-    "resume": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::resume.resume",
-      "inversedBy": "work_experiences"
-    },
     "title": {
       "type": "string"
     },
@@ -32,17 +21,11 @@
     "end_date": {
       "type": "date"
     },
-    "experience_descriptions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::experience-description.experience-description",
-      "mappedBy": "work_experience"
+    "description": {
+      "type": "richtext"
     },
-    "owner": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "work_experiences"
+    "created_by_user_id": {
+      "type": "integer"
     }
   }
 }

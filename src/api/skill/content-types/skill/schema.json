@@ -12,20 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "skills"
-    },
     "skill_name": {
       "type": "string"
     },
-    "resume": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::resume.resume",
-      "inversedBy": "skills"
+    "created_by_user_id": {
+      "type": "integer"
     }
   }
 }

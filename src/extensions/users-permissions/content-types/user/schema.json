@@ -65,71 +65,16 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "first_name": {
-      "type": "string"
-    },
-    "last_name": {
-      "type": "string"
-    },
-    "location": {
-      "type": "string"
-    },
-    "duration_of_cv": {
-      "type": "string"
-    },
-    "cv_start_date": {
-      "type": "datetime"
-    },
-    "profile_picture": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "skills": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::skill.skill",
-      "mappedBy": "user"
-    },
-    "references": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::reference.reference",
-      "mappedBy": "user"
-    },
-    "educations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::education.education",
-      "mappedBy": "user"
-    },
-    "experience_descriptions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::experience-description.experience-description",
-      "mappedBy": "user"
-    },
     "admin_user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
     },
-    "resume": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::resume.resume"
+    "admin_account_id": {
+      "type": "integer"
     },
-    "work_experiences": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::work-experience.work-experience",
-      "mappedBy": "owner"
+    "cv_access_code": {
+      "type": "integer"
     }
   }
 }

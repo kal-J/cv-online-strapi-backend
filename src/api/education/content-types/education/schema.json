@@ -27,17 +27,8 @@
     "end_date": {
       "type": "date"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "educations"
-    },
-    "resume": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::resume.resume",
-      "inversedBy": "educations"
+    "created_by_user_id": {
+      "type": "integer"
     }
   }
 }

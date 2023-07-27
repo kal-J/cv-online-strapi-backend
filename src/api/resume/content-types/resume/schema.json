@@ -12,16 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "professional_summary": {
       "type": "richtext"
-    },
-    "access_code": {
-      "type": "integer"
     },
     "twitter_link": {
       "type": "string"
@@ -34,39 +26,48 @@
         "images"
       ]
     },
-    "skills": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::skill.skill",
-      "mappedBy": "resume"
-    },
-    "references": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::reference.reference",
-      "mappedBy": "resume"
-    },
-    "educations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::education.education",
-      "mappedBy": "resume"
-    },
-    "work_experiences": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::work-experience.work-experience",
-      "mappedBy": "resume"
-    },
     "title": {
       "type": "string",
-      "unique": true
+      "unique": false,
+      "required": true
     },
     "linkedin_link": {
       "type": "string"
     },
     "current_position": {
       "type": "string"
+    },
+    "created_by_user_id": {
+      "type": "integer"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "duration_of_cv": {
+      "type": "string"
+    },
+    "profile_picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cv_access_code": {
+      "type": "integer"
+    },
+    "cv_start_date": {
+      "type": "date"
     }
   }
 }
